@@ -10,7 +10,7 @@ const updateTemperature = R.curry((convertFn, city) => {
   return R.merge(city, { temp });
 });
 
-const updatedCities = cities.map(updateTemperature(KtoC));
+const updatedCities = R.map(updateTemperature(KtoC), cities);
 
 console.log(updatedCities);
 
